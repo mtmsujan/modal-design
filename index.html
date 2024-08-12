@@ -331,10 +331,44 @@
                     </div>
                 </div>
             </div>
+            <div class="code-preview-wrapper">
+                <div id="default-modal-example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600">
+                    <div class="w-full code-responsive-wrapper">
+                        
+                        <!-- Modal toggle button -->
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-
+        
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modalToggleButton = document.querySelector('[data-modal-toggle="default-modal"]');
+            const modal = document.getElementById('default-modal');
+            const modalCloseButtons = document.querySelectorAll('[data-modal-hide="default-modal"]');
+    
+            modalToggleButton.addEventListener('click', function () {
+                modal.classList.remove('hidden');
+            });
+    
+            modalCloseButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    modal.classList.add('hidden');
+                });
+            });
+    
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
