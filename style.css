@@ -169,3 +169,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.toggle-bg{
+  background-color: #241b1b !important;
+}
