@@ -28,3 +28,25 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSevenDiv.classList.toggle('toggle-bg');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('toggle-bg-button');
+    const body = document.body;
+    
+    toggleButton.addEventListener('click', function () {
+      // Toggle the dark mode class on the body
+      body.classList.toggle('dark');
+  
+      // Switch the icon and data-toggle-dark attribute
+      if (body.classList.contains('dark')) {
+        toggleButton.setAttribute('data-toggle-dark', 'dark');
+        document.querySelector('[data-toggle-icon="moon"]').classList.add('hidden');
+        document.querySelector('[data-toggle-icon="sun"]').classList.remove('hidden');
+      } else {
+        toggleButton.setAttribute('data-toggle-dark', 'light');
+        document.querySelector('[data-toggle-icon="sun"]').classList.add('hidden');
+        document.querySelector('[data-toggle-icon="moon"]').classList.remove('hidden');
+      }
+    });
+});
+  
